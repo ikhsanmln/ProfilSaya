@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="#171311" name="theme-color" />
+    <meta content="Hubungi Ikhsan Maulana Amartya untuk diskusi proyek dan kolaborasi." name="description" />
+    <title>
+        Contact &mdash; Ikhsan Maulana Amartya
+    </title>
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body class="inner-page">
+    <header class="topbar">
+        <a aria-label="AMRTHZ beranda" class="logo" href="index.html">
+            AMRTHZ
+            <span>
+                .
+            </span>
+        </a>
+        <nav aria-label="Menu utama">
+            <a href="index.html">
+                Home
+            </a>
+            <a href="about.html">
+                About
+            </a>
+            <a href="services.html">
+                Services
+            </a>
+            <a href="projects.html">
+                Projects
+            </a>
+        </nav>
+        <a aria-current="page" class="menu-pill" href="contact.html">
+            Let&rsquo;s talk
+            <span>
+                &nearrow;
+            </span>
+        </a>
+    </header>
+    <main>
+        <header class="simple-page-head">
+            <p class="eyebrow">
+                04 / Get in touch
+            </p>
+            <h1>
+                Ada ide?
+                <br />
+                Mari bicara
+                <span>
+                    .
+                </span>
+            </h1>
+            <p class="sub">
+                Terbuka untuk bertukar ide, diskusi proyek, atau peluang kolaborasi kreatif.
+            </p>
+        </header>
+        <section class="contact-layout">
+            <div class="contact-copy">
+                <p class="section-kicker">
+                    LET'S START SOMETHING
+                </p>
+                <h2>
+                    Setiap ide
+                    <br />
+                    dimulai dari obrolan.
+                </h2>
+                <p>
+                    Isi formulir di samping untuk menyiapkan pesan melalui aplikasi email di perangkatmu. Website ini
+                    tidak mengirim pesan secara otomatis.
+                </p>
+                <div class="contact-meta">
+                    <span>
+                        LOCATION
+                    </span>
+                    <strong>
+                        Yogyakarta, Indonesia
+                    </strong>
+                </div>
+                <div class="contact-meta">
+                    <span>
+                        EMAIL
+                    </span>
+                    <a href="mailto:ikhsanmaulana7619@gmail.com">
+                        ikhsanmaulana7619@gmail.com &nearrow;
+                    </a>
+                </div>
+            </div>
+            <form class="contact-form" id="contact-form">
+                <label for="name">
+                    Nama
+                    <input autocomplete="name" id="name" name="name" placeholder="Nama kamu" required="" type="text" />
+                </label>
+                <label for="email">
+                    Email
+                    <input autocomplete="email" id="email" name="email" placeholder="nama@email.com" required=""
+                        type="email" />
+                </label>
+                <label for="message">
+                    Pesan
+                    <textarea id="message" name="message" placeholder="Ceritakan sedikit tentang ide atau proyekmu..."
+                        required=""></textarea>
+                </label>
+                <button class="btn" type="submit">
+                    Siapkan email
+                    <span aria-hidden="true">
+                        &nearrow;
+                    </span>
+                </button>
+                <p aria-live="polite" class="status" id="form-status" role="status">
+                </p>
+            </form>
+        </section>
+        <footer>
+            <span>
+                &copy; 2026 Ikhsan Maulana Amartya
+            </span>
+            <span>
+                CONTACT / 04
+            </span>
+        </footer>
+    </main>
+    <script>
+        const contactForm = document.getElementById('contact-form');
+        const formStatus = document.getElementById('form-status');
+        const recipient = 'ikhsanmaulana7619@gmail.com';
+
+        contactForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+            const subject = encodeURIComponent('Pesan portfolio dari ' + name);
+            const body = encodeURIComponent(
+                'Nama: ' + name + '\n' +
+                'Email: ' + email + '\n\n' +
+                'Pesan:\n' + message
+            );
+
+            formStatus.textContent = 'Membuka aplikasi email…';
+            window.location.href = 'mailto:' + recipient + '?subject=' + subject + '&body=' + body;
+        });
+    </script>
+</body>
+
+</html>
